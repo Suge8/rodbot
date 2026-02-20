@@ -1,0 +1,206 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .t { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+      .label { font-size: 10px; fill: #8b949e; font-weight: 700; letter-spacing: 0.8px; }
+      .node-text { font-size: 11px; fill: #c9d1d9; font-weight: 600; }
+      .sub-text { font-size: 9px; fill: #8b949e; }
+      .node { fill: #161b22; stroke: #30363d; stroke-width: 1; rx: 6; ry: 6; }
+      .pill { fill: #21262d; rx: 10; ry: 10; }
+      .container { fill: #0d1117; stroke: #30363d; stroke-width: 1; stroke-dasharray: 4 3; rx: 8; ry: 8; }
+      .core-box { fill: #0d1117; stroke: #00d4ff; stroke-width: 2; rx: 10; ry: 10; }
+      .module { fill: #161b22; stroke-width: 1; rx: 4; ry: 4; }
+      .persist-box { fill: #0d1117; stroke: #30363d; stroke-width: 1; rx: 8; ry: 8; }
+      .persist-node { fill: #161b22; stroke: #30363d; stroke-width: 1; rx: 6; ry: 6; }
+
+      /* Flow lines */
+      @keyframes dashFlow { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -16; } }
+      @keyframes expFlow { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -20; } }
+      @keyframes corePulse {
+        0%, 100% { stroke: #00d4ff; filter: drop-shadow(0 0 4px #00d4ff33); }
+        50% { stroke: #38bdf8; filter: drop-shadow(0 0 12px #00d4ff66); }
+      }
+
+      .flow { stroke: #00d4ff; stroke-width: 1.5; fill: none; stroke-dasharray: 8 6; animation: dashFlow 1.5s linear infinite; opacity: 0.7; }
+      .exp-flow { stroke: #22c55e; stroke-width: 1.5; fill: none; stroke-dasharray: 6 4; animation: expFlow 2s linear infinite; opacity: 0.6; }
+      .core-anim { animation: corePulse 3s ease-in-out infinite; }
+      .solid-line { stroke: #30363d; stroke-width: 1; fill: none; opacity: 0.5; }
+    </style>
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="0.5" fill="#1e293b"/>
+    </pattern>
+    <marker id="ac" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3z" fill="#00d4ff" opacity="0.7"/>
+    </marker>
+    <marker id="ag" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3z" fill="#22c55e" opacity="0.7"/>
+    </marker>
+    <marker id="agr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3z" fill="#30363d" opacity="0.5"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" class="bg" rx="12"/>
+  <rect width="800" height="500" fill="url(#dots)" rx="12"/>
+
+  <!-- ═══ INPUT SOURCES (Left) ═══ -->
+  <text x="50" y="88" class="t label" text-anchor="middle">INPUT</text>
+  <g transform="translate(14, 96)">
+    <rect width="72" height="34" class="node"/>
+    <text x="36" y="21" class="t node-text" text-anchor="middle">User</text>
+  </g>
+  <g transform="translate(14, 144)">
+    <rect width="72" height="34" class="node"/>
+    <text x="36" y="15" class="t node-text" text-anchor="middle">Cron</text>
+    <text x="36" y="28" class="t sub-text" text-anchor="middle">Heartbeat</text>
+  </g>
+
+  <!-- ═══ CHANNELS (Center-Left) ═══ -->
+  <g transform="translate(110, 56)">
+    <rect width="130" height="256" class="container"/>
+    <text x="65" y="-8" class="t label" text-anchor="middle">9 CHANNELS</text>
+    <!-- Pills -->
+    <rect x="8" y="14" width="54" height="20" class="pill"/>
+    <text x="35" y="28" class="t sub-text" text-anchor="middle">Telegram</text>
+    <rect x="68" y="14" width="54" height="20" class="pill"/>
+    <text x="95" y="28" class="t sub-text" text-anchor="middle">Discord</text>
+
+    <rect x="8" y="42" width="54" height="20" class="pill"/>
+    <text x="35" y="56" class="t sub-text" text-anchor="middle">WhatsApp</text>
+    <rect x="68" y="42" width="54" height="20" class="pill"/>
+    <text x="95" y="56" class="t sub-text" text-anchor="middle">Slack</text>
+
+    <rect x="8" y="70" width="54" height="20" class="pill"/>
+    <text x="35" y="84" class="t sub-text" text-anchor="middle">Feishu</text>
+    <rect x="68" y="70" width="54" height="20" class="pill"/>
+    <text x="95" y="84" class="t sub-text" text-anchor="middle">Email</text>
+
+    <rect x="8" y="98" width="54" height="20" class="pill"/>
+    <text x="35" y="112" class="t sub-text" text-anchor="middle">QQ</text>
+    <rect x="68" y="98" width="54" height="20" class="pill"/>
+    <text x="95" y="112" class="t sub-text" text-anchor="middle">DingTalk</text>
+
+    <rect x="38" y="126" width="54" height="20" class="pill"/>
+    <text x="65" y="140" class="t sub-text" text-anchor="middle">Mochat</text>
+
+    <!-- Bus label -->
+    <rect x="20" y="164" width="90" height="22" rx="4" fill="#161b22" stroke="#00d4ff" stroke-width="0.5"/>
+    <text x="65" y="179" class="t" text-anchor="middle" font-size="9" fill="#00d4ff">Message Bus</text>
+
+    <!-- Subagent -->
+    <rect x="8" y="200" width="114" height="42" rx="4" fill="#161b22" stroke="#3b82f6" stroke-width="0.5"/>
+    <text x="65" y="218" class="t" text-anchor="middle" font-size="10" fill="#c9d1d9" font-weight="600">Subagent</text>
+    <text x="65" y="233" class="t sub-text" text-anchor="middle">Background Tasks</text>
+  </g>
+
+  <!-- ═══ AGENT CORE (Center) ═══ -->
+  <g transform="translate(270, 48)">
+    <rect width="220" height="272" class="core-box core-anim"/>
+    <text x="110" y="-10" class="t label" text-anchor="middle" fill="#00d4ff">AGENT CORE  (~4,100 lines)</text>
+
+    <!-- Thinking Protocol -->
+    <rect x="12" y="18" width="196" height="36" class="module" stroke="#a855f7"/>
+    <text x="110" y="41" class="t node-text" text-anchor="middle" font-size="11">Thinking Protocol</text>
+
+    <!-- Context Builder -->
+    <rect x="12" y="66" width="196" height="50" class="module" stroke="#22c55e"/>
+    <text x="110" y="86" class="t node-text" text-anchor="middle" font-size="11">Context Builder</text>
+    <text x="110" y="102" class="t sub-text" text-anchor="middle">+ Experience Injection</text>
+
+    <!-- Tool Executor -->
+    <rect x="12" y="128" width="196" height="50" class="module" stroke="#f59e0b"/>
+    <text x="110" y="148" class="t node-text" text-anchor="middle" font-size="11">Tool Executor</text>
+    <text x="110" y="164" class="t sub-text" text-anchor="middle">+ Retry / Reflection</text>
+
+    <!-- Utility Model -->
+    <rect x="12" y="190" width="94" height="36" class="module" stroke="#8b949e"/>
+    <text x="59" y="211" class="t" text-anchor="middle" font-size="10" fill="#8b949e">Utility Model</text>
+
+    <!-- Prompt Cache -->
+    <rect x="114" y="190" width="94" height="36" class="module" stroke="#8b949e"/>
+    <text x="161" y="211" class="t" text-anchor="middle" font-size="10" fill="#8b949e">Prompt Cache</text>
+
+    <!-- Skills dispatch -->
+    <rect x="12" y="238" width="196" height="22" rx="4" fill="#161b22" stroke="#30363d" stroke-width="0.5"/>
+    <text x="110" y="253" class="t sub-text" text-anchor="middle">Skills Loader + Heartbeat</text>
+  </g>
+
+  <!-- ═══ RESOURCES (Right) ═══ -->
+  <g transform="translate(520, 56)">
+    <text x="130" y="-8" class="t label" text-anchor="middle">RESOURCES</text>
+    <!-- LLM Providers -->
+    <rect x="0" y="0" width="260" height="80" class="node"/>
+    <text x="130" y="20" class="t node-text" text-anchor="middle">LLM Providers</text>
+    <text x="130" y="38" class="t sub-text" text-anchor="middle">OpenRouter / Anthropic / OpenAI</text>
+    <text x="130" y="52" class="t sub-text" text-anchor="middle">DeepSeek / Gemini / Groq</text>
+    <text x="130" y="66" class="t sub-text" text-anchor="middle">16+ providers, add yours in 2 steps</text>
+
+    <!-- MCP Tools -->
+    <rect x="0" y="96" width="260" height="52" class="node"/>
+    <text x="130" y="118" class="t node-text" text-anchor="middle">MCP Tools</text>
+    <text x="130" y="136" class="t sub-text" text-anchor="middle">stdio + HTTP  |  Claude/Cursor compatible</text>
+
+    <!-- Skills -->
+    <rect x="0" y="164" width="260" height="52" class="node"/>
+    <text x="130" y="186" class="t node-text" text-anchor="middle">Skills</text>
+    <text x="130" y="204" class="t sub-text" text-anchor="middle">GitHub / Cron / Weather / Custom</text>
+  </g>
+
+  <!-- ═══ PERSISTENT LAYER (Bottom) ═══ -->
+  <g transform="translate(14, 352)">
+    <rect width="772" height="132" class="persist-box"/>
+    <text x="386" y="22" class="t label" text-anchor="middle" fill="#00d4ff">PERSISTENT LAYER  -  LanceDB</text>
+
+    <!-- Three sub-sections -->
+    <rect x="20" y="38" width="226" height="72" class="persist-node"/>
+    <text x="133" y="62" class="t node-text" text-anchor="middle">Long-term Memory</text>
+    <text x="133" y="80" class="t sub-text" text-anchor="middle">User prefs, project facts</text>
+    <text x="133" y="94" class="t sub-text" text-anchor="middle">Auto-consolidation</text>
+
+    <rect x="266" y="38" width="226" height="72" class="persist-node"/>
+    <text x="379" y="62" class="t node-text" text-anchor="middle">Conversation History</text>
+    <text x="379" y="80" class="t sub-text" text-anchor="middle">Session context</text>
+    <text x="379" y="94" class="t sub-text" text-anchor="middle">Trajectory compression</text>
+
+    <rect x="512" y="38" width="240" height="72" class="persist-node"/>
+    <text x="632" y="58" class="t node-text" text-anchor="middle" fill="#22c55e">Experience Store</text>
+    <text x="632" y="76" class="t sub-text" text-anchor="middle">Lessons / strategies / keywords</text>
+    <text x="632" y="90" class="t sub-text" text-anchor="middle">Confidence calibration</text>
+    <text x="632" y="104" class="t sub-text" text-anchor="middle">Active forgetting</text>
+  </g>
+
+  <!-- ═══ CONNECTIONS ═══ -->
+  <!-- Input → Channels -->
+  <path d="M86 113 L110 113" class="flow" marker-end="url(#ac)"/>
+  <path d="M86 161 L100 161 L100 185 L110 185" class="flow" marker-end="url(#ac)"/>
+
+  <!-- Channels → Agent Core -->
+  <path d="M240 184 L270 184" class="flow" marker-end="url(#ac)"/>
+
+  <!-- Agent Core → LLM Providers -->
+  <path d="M490 140 L520 96" class="flow" marker-end="url(#ac)"/>
+
+  <!-- Agent Core → MCP Tools -->
+  <path d="M490 190 L520 170" class="flow" marker-end="url(#ac)"/>
+
+  <!-- Agent Core → Skills -->
+  <path d="M490 240 L520 246" class="flow" marker-end="url(#ac)"/>
+
+  <!-- Agent Core → Persistent Layer -->
+  <path d="M380 320 L380 352" class="solid-line" marker-end="url(#agr)"/>
+
+  <!-- ═══ EXPERIENCE FEEDBACK LOOP (Green) ═══ -->
+  <!-- Experience Store → up → inject into Agent Core Context Builder -->
+  <path d="M646 352 L646 340 L500 340 L500 155 L490 155" class="exp-flow" marker-end="url(#ag)"/>
+  <!-- Agent Core → down → back to Experience Store -->
+  <path d="M460 320 L460 336 L620 336 L620 352" class="exp-flow" marker-end="url(#ag)"/>
+  <!-- Loop label -->
+  <rect x="494" y="328" width="104" height="16" rx="8" fill="#22c55e18"/>
+  <text x="546" y="340" class="t" text-anchor="middle" font-size="8" fill="#22c55e" font-weight="600">Experience Loop</text>
+
+  <!-- Output arrow from LLM back -->
+  <path d="M520 56 Q505 48 490 56" class="flow" marker-end="url(#ac)" opacity="0.4"/>
+
+</svg>
