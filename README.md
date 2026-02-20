@@ -4,7 +4,7 @@
 
 # 🤘 rodbot
 
-### **Ride or Die.** Your AI that never forgets, never repeats mistakes, and always has your back.
+### **Ride or Die** — 你的 AI，永远记得你，永远站你这边。
 
 <br>
 
@@ -14,86 +14,85 @@
 ![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
 [![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/MnCvHqpUGB)
 
-**~4,100 lines of core code.** Memory that persists. Experience that compounds. Intelligence that evolves.
+**~4,100 行核心代码** · 记忆会留下 · 经验会积累 · 智能会进化
 
-[Quick Start](#quick-start) · [Why rodbot?](#why-rodbot) · [Architecture](#architecture) · [Platforms](#9-chat-platforms)
+[快速开始](#-快速开始) · [为什么选 rodbot？](#为什么选-rodbot) · [架构](#-架构) · [English](#-english-documentation)
 
 </div>
 
 <br>
 
-## The Name
+## 名字的含义
 
-**rod** = **R**ide **o**r **D**ie.
+**rod** = **R**ide **o**r **D**ie — 生死之交。
 
-The kind of partner that remembers what you care about, learns what works for you, and never makes the same mistake twice. Not a chatbot you talk at — an agent that grows with you.
+不是一个你对着说话的聊天机器人，而是一个 **记得你在乎什么、学会什么对你有用、不会犯同样错误** 的伙伴。用得越久，它越懂你。
 
-<p align="center"><img src="docs/features.svg" width="800" alt="Features"></p>
+<p align="center"><img src="docs/features.svg" width="800" alt="核心特性"></p>
 
-## Why rodbot?
+## 为什么选 rodbot？
 
-Most AI assistants have amnesia. Every session starts from zero. They repeat the same mistakes, forget your preferences, and never get better at their job.
+大多数 AI 助手都有"失忆症"——每次对话从零开始，反复犯同样的错，忘了你的偏好，永远不会进步。
 
-rodbot is different. It **remembers**, **reflects**, and **evolves**.
+rodbot 不一样。它 **记得**、**反思**、**进化**。
 
-### 🧠 Memory That Persists
+### 🧠 记忆系统
 
-LanceDB-powered persistent memory with **vector search + keyword fallback** — works with or without embedding models.
+基于 **LanceDB** 的持久化记忆，**向量搜索 + 关键词降级**——有没有 embedding 模型都能用。
 
-Your agent remembers your preferences, your projects, your patterns. It automatically consolidates old context, keeps what matters, and actively forgets stale knowledge. Across sessions. Across restarts.
+你的 agent 会记住你的偏好、你的项目、你的习惯。自动整合旧上下文，保留重要的，主动清理过时的。跨会话，跨重启，永远在线。
 
-### 📚 Experience That Compounds (ExperienceLoop)
+### 📚 经验学习（ExperienceLoop）
 
-Inspired by Microsoft [RE-TRAC](https://arxiv.org/abs/2602.02486), rodbot runs a **closed-loop experience engine**:
+受微软 [RE-TRAC](https://arxiv.org/abs/2602.02486) 启发，rodbot 实现了一个 **闭环经验引擎**：
 
-- After every task → auto-extracts lessons, strategies, and failure patterns
-- Before similar tasks → retrieves and injects relevant experience into the prompt
-- **Confidence calibration** — tracks success rates, auto-adjusts quality scores
-- **Conflict detection** — flags contradicting experiences
-- **Negative learning** — past failures become warnings, not repeated mistakes
-- **Active forgetting** — stale experiences are cleaned up automatically
+- 每次任务完成后 → 自动提取教训、策略和失败模式
+- 遇到类似任务时 → 检索相关经验注入到 prompt 中
+- **置信度校准** — 追踪每条经验的成功率，自动调整质量分
+- **冲突检测** — 发现矛盾的经验时标记提醒
+- **负面学习** — 过去的失败变成警告，不再重蹈覆辙
+- **主动遗忘** — 过期和低质量的经验自动清理
 
-Other agents repeat mistakes. **rodbot learns from them.**
+别的 agent 重复犯错。**rodbot 从错误中学习。**
 
-### 🔄 Thinking + Self-Correction
+### 🔄 深度思考 + 自我纠错
 
-- **Thinking Protocol** — deep reasoning in System Prompt. Zero extra API calls, dramatically better answers
-- **Retry/Reflection** — auto-detects tool errors, escalates to deep reflection after 3 consecutive failures
-- **Tool Strategy** — dynamically enables/disables tool hints based on availability, preventing hallucinated calls
+- **Thinking Protocol** — System Prompt 内置深度推理，零额外 API 调用，回答质量显著提升
+- **Retry/Reflection** — 自动检测工具错误，连续 3 次失败后升级为深度反思策略
+- **Tool Strategy** — 根据实际可用性动态启停工具提示，防止幻觉调用
 
-### ⚡ Lightweight by Design
+### ⚡ 极致轻量
 
-**~4,100 lines of core code.** Run `bash core_agent_lines.sh` to verify.
+**~4,100 行核心代码。** 运行 `bash core_agent_lines.sh` 自行验证。
 
-Fast startup. Low footprint. Easy to read, modify, and extend. Built on [nanobot](https://github.com/HKUDS/nanobot) — fully compatible with all upstream features.
+启动快、占用低、代码清晰易读。基于 [nanobot](https://github.com/HKUDS/nanobot) 构建，完全兼容上游所有功能。
 
-## How rodbot Compares
+## 🆚 对比
 
-rodbot sits in the sweet spot: **OpenClaw's ambition, nanobot's simplicity, and intelligence neither has.**
+rodbot 占据最佳位置：**OpenClaw 的野心，nanobot 的简洁，以及两者都没有的智能。**
 
 | | OpenClaw | nanobot | **rodbot** |
 |---|---|---|---|
-| Language | TypeScript | Python | **Python** |
-| Core code | 430,000+ lines | ~3,800 lines | **~4,100 lines** |
-| Memory | Session-only | File-based | **LanceDB (vector + keyword)** |
-| Experience learning | ❌ | ❌ | **ExperienceLoop** |
-| Self-reflection | ❌ | ❌ | **Thinking Protocol + Retry** |
-| Open issues | 8,400+ | — | **Stable** |
-| Setup | Complex wizard | 2 min | **2 min** |
-| Identity crisis | 3 renames | — | **Ride or Die. Always.** |
+| 语言 | TypeScript | Python | **Python** |
+| 核心代码 | 430,000+ 行 | ~3,800 行 | **~4,100 行** |
+| 记忆 | 仅会话内 | 文件系统 | **LanceDB 向量+关键词** |
+| 经验学习 | ❌ | ❌ | **ExperienceLoop** |
+| 自我反思 | ❌ | ❌ | **Thinking Protocol + Retry** |
+| Open Issues | 8,400+ | — | **稳定可控** |
+| 上手时间 | 复杂向导 | 2 分钟 | **2 分钟** |
 
-> OpenClaw is a powerhouse with a massive community — but 430K lines of TypeScript means a deep dependency tree, complex debugging, and [8,400+ open issues](https://github.com/openclaw/openclaw/issues). nanobot proved you only need ~4,000 lines. **rodbot takes that foundation and adds the brain** — memory, experience, and self-correction — in just 300 extra lines.
+> OpenClaw 有庞大的社区——但 430K 行 TypeScript 意味着深度依赖树、复杂的调试和 8,400+ 个未关闭 issue。nanobot 证明了只需 ~4,000 行就够。**rodbot 在此基础上加了大脑**——记忆、经验和自我纠错——只多了 300 行。
 
-<p align="center"><img src="docs/architecture.svg" width="800" alt="Architecture"></p>
+<p align="center"><img src="docs/architecture.svg" width="800" alt="系统架构"></p>
 
-## Quick Start
+## 🚀 快速开始
 
 ```bash
 pip install rodbot-ai
 rodbot onboard
 ```
 
-Set your API key in `~/.rodbot/config.json`:
+在 `~/.rodbot/config.json` 中设置 API Key：
 
 ```json
 {
@@ -105,15 +104,15 @@ Set your API key in `~/.rodbot/config.json`:
 }
 ```
 
-Start your agent:
+开始对话：
 
 ```bash
 rodbot agent
 ```
 
-**That's it. Working AI assistant in 2 minutes.**
+**就这样。2 分钟，你的 AI 助手就位。**
 
-Optional: add a **Utility Model** for background tasks (experience extraction, memory consolidation) to save costs:
+可选：配置 **Utility Model** 处理后台任务（经验提取、记忆整合），节省成本：
 
 ```json
 {
@@ -126,31 +125,31 @@ Optional: add a **Utility Model** for background tasks (experience extraction, m
 }
 ```
 
-## 9 Chat Platforms
+## 💬 9 大平台
 
-One config. One command: `rodbot gateway`.
+一个配置，一条命令：`rodbot gateway`
 
-| Platform | Setup |
-|----------|-------|
-| **Telegram** | Bot token from @BotFather |
-| **Discord** | Bot token + Message Content intent |
-| **WhatsApp** | QR code scan |
-| **Feishu** | App ID + App Secret |
-| **Slack** | Bot token + App-Level token |
-| **Email** | IMAP/SMTP credentials |
+| 平台 | 准备 |
+|------|------|
+| **Telegram** | @BotFather 获取 Token |
+| **Discord** | Bot Token + Message Content Intent |
+| **WhatsApp** | 扫描二维码 |
+| **飞书** | App ID + App Secret |
+| **Slack** | Bot Token + App-Level Token |
+| **Email** | IMAP/SMTP 凭证 |
 | **QQ** | App ID + App Secret |
-| **DingTalk** | App Key + App Secret |
-| **Mochat** | Claw token (auto-setup) |
+| **钉钉** | App Key + App Secret |
+| **Mochat** | Claw Token（支持自动配置） |
 
-## 16+ LLM Providers
+## 🤖 16+ LLM Provider
 
-OpenRouter · Anthropic · OpenAI · DeepSeek · Gemini · Groq · MiniMax · SiliconFlow · VolcEngine · DashScope · Moonshot · Zhipu · AIHubMix · vLLM · OpenAI Codex · GitHub Copilot · Custom endpoint
+OpenRouter · Anthropic · OpenAI · DeepSeek · Gemini · Groq · MiniMax · SiliconFlow · VolcEngine · DashScope · Moonshot · Zhipu · AIHubMix · vLLM · OpenAI Codex · GitHub Copilot · 自定义端点
 
-Adding a new provider? **2 steps, ~10 lines of code.** Add a `ProviderSpec` to `registry.py`, add a field to `schema.py`. Done.
+新增 Provider？**2 步，~10 行代码。**
 
-## MCP Support
+## 🔌 MCP 支持
 
-Model Context Protocol — extend with any tool. Config is **compatible with Claude Desktop and Cursor**:
+Model Context Protocol，接入任何工具生态。配置 **兼容 Claude Desktop 和 Cursor**：
 
 ```json
 {
@@ -165,9 +164,7 @@ Model Context Protocol — extend with any tool. Config is **compatible with Cla
 }
 ```
 
-Supports **stdio** and **HTTP** modes.
-
-## Docker
+## 🐳 Docker
 
 ```bash
 docker compose run --rm rodbot-cli onboard
@@ -175,80 +172,104 @@ vim ~/.rodbot/config.json
 docker compose up -d rodbot-gateway
 ```
 
-## CLI
+## 🖥️ CLI
 
-| Command | What it does |
-|---------|-------------|
-| `rodbot onboard` | Initialize |
-| `rodbot agent` | Interactive chat |
-| `rodbot agent -m "..."` | Single message |
-| `rodbot gateway` | Start all channels |
-| `rodbot status` | Show status |
-| `rodbot cron list` | Scheduled tasks |
+| 命令 | 说明 |
+|------|------|
+| `rodbot onboard` | 初始化 |
+| `rodbot agent` | 交互对话 |
+| `rodbot agent -m "..."` | 单条消息 |
+| `rodbot gateway` | 启动所有平台 |
+| `rodbot status` | 查看状态 |
+| `rodbot cron list` | 定时任务 |
 
-## Project Structure
+## 📁 项目结构
 
 ```
 rodbot/
-├── agent/          # Core agent logic
-│   ├── loop.py     # Agent loop (Thinking + Retry + Experience)
-│   ├── context.py  # Prompt builder + experience injection
-│   ├── memory.py   # LanceDB persistent memory
-│   ├── subagent.py # Background task execution
-│   └── tools/      # Built-in tools (Shell, File, Web, MCP)
-├── skills/         # GitHub, Weather, Cron, Tmux
-├── channels/       # 9 chat platform integrations
-├── providers/      # 16+ LLM provider adapters
-├── bus/            # Async message routing
-├── cron/           # Scheduled tasks
-└── cli/            # Commands
+├── agent/          # 核心 Agent 逻辑
+│   ├── loop.py     # Agent 循环（思考 + 重试 + 经验）
+│   ├── context.py  # Prompt 构建 + 经验注入
+│   ├── memory.py   # LanceDB 持久记忆
+│   ├── subagent.py # 后台任务执行
+│   └── tools/      # 内置工具（Shell, 文件, Web, MCP）
+├── skills/         # GitHub, 天气, Cron, Tmux
+├── channels/       # 9 大平台接入
+├── providers/      # 16+ LLM Provider
+├── bus/            # 异步消息路由
+├── cron/           # 定时任务
+└── cli/            # 命令行
 ```
 
-## Contributing
+## 🤝 贡献
 
-PRs welcome. The codebase is intentionally small and readable.
+欢迎 PR。代码库刻意保持精简可读。
 
-- [ ] Multi-modal — images, voice, video
-- [x] ~~Long-term memory~~ — LanceDB
-- [x] ~~Better reasoning~~ — Thinking Protocol + Retry/Reflection
-- [x] ~~Self-improvement~~ — ExperienceLoop
-- [ ] More integrations — Calendar, etc.
-
-<details>
-<summary><b>中文文档</b></summary>
+- [ ] 多模态 — 图片、语音、视频
+- [x] ~~长期记忆~~ — LanceDB
+- [x] ~~更好的推理~~ — Thinking Protocol + Retry/Reflection
+- [x] ~~自我进化~~ — ExperienceLoop
+- [ ] 更多集成 — 日历等
 
 <br>
 
-### 什么是 rodbot
+---
 
-**rod** = **R**ide **o**r **D**ie — 生死之交。
+<br>
 
-rodbot 基于 [nanobot](https://github.com/HKUDS/nanobot) 打造，核心代码仅 ~4,100 行，在保持极致轻量的基础上增加了 **记忆系统**、**经验学习**、**深度思考** 和 **自动纠错**。
+<details open>
+<summary><h2>🇺🇸 English Documentation</h2></summary>
 
-### 核心优势
+### What is rodbot?
 
-| 特性 | 说明 |
-|------|------|
-| **ExperienceLoop** | 从历史任务提取经验，下次类似任务自动注入，含置信度校准、冲突检测、负面学习、主动遗忘 |
-| **LanceDB 记忆** | 向量搜索 + 关键词降级，长期记忆自动整合与清理 |
-| **Thinking Protocol** | System Prompt 内置深度推理，零额外延迟 |
-| **Retry/Reflection** | 工具出错自动重试，连续 3 次失败升级反思策略 |
+**rod** = **R**ide **o**r **D**ie — your partner that remembers what you care about, learns what works, and never makes the same mistake twice.
 
-### 快速开始
+**~4,100 lines of core code**, with built-in persistent memory, experience learning, and self-reflection. Built on [nanobot](https://github.com/HKUDS/nanobot).
+
+### Why rodbot?
+
+**Memory** — LanceDB-powered persistent memory with vector + keyword search. Remembers across sessions, consolidates automatically, forgets stale knowledge.
+
+**Experience Learning** — Closed-loop experience engine inspired by Microsoft RE-TRAC. Auto-extracts lessons after tasks, injects relevant experience before similar tasks. Confidence calibration, conflict detection, negative learning, active forgetting.
+
+**Thinking + Self-Correction** — Deep reasoning via Thinking Protocol (zero latency cost), auto-retry with reflection escalation on tool errors.
+
+**Lightweight** — ~4,100 lines. 99% smaller than OpenClaw (430K+ lines). 2-minute setup. Fully compatible with nanobot.
+
+### How rodbot Compares
+
+| | OpenClaw | nanobot | **rodbot** |
+|---|---|---|---|
+| Language | TypeScript | Python | **Python** |
+| Core code | 430,000+ lines | ~3,800 lines | **~4,100 lines** |
+| Memory | Session-only | File-based | **LanceDB (vector + keyword)** |
+| Experience learning | ❌ | ❌ | **ExperienceLoop** |
+| Self-reflection | ❌ | ❌ | **Thinking Protocol + Retry** |
+| Open issues | 8,400+ | — | **Stable** |
+| Setup time | Complex wizard | 2 min | **2 min** |
+
+### Quick Start
 
 ```bash
-pip install rodbot-ai && rodbot onboard
-# 编辑 ~/.rodbot/config.json 设置 API Key
+pip install rodbot-ai
+rodbot onboard
+# Set API key in ~/.rodbot/config.json
 rodbot agent
 ```
 
-详细配置请参考英文文档。
+**9 Chat Platforms** — Telegram, Discord, WhatsApp, Feishu, Slack, Email, QQ, DingTalk, Mochat
+
+**16+ LLM Providers** — OpenRouter, Anthropic, OpenAI, DeepSeek, Gemini, Groq, and more. Adding a new provider takes 2 steps.
+
+**MCP Support** — Model Context Protocol, compatible with Claude Desktop and Cursor configs.
+
+**Docker** — `docker compose up -d rodbot-gateway`
 
 </details>
 
-<div align="center">
-
 <br>
+
+<div align="center">
 
 ### Star History
 
