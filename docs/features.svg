@@ -1,185 +1,243 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
   <defs>
     <style>
-      .t{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-
-      @keyframes fadeSlide{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-      @keyframes glow1{0%,100%{filter:drop-shadow(0 0 6px #22c55e55)}50%{filter:drop-shadow(0 0 18px #22c55eaa)}}
-      @keyframes glow2{0%,100%{filter:drop-shadow(0 0 6px #00d4ff55)}50%{filter:drop-shadow(0 0 18px #00d4ffaa)}}
-      @keyframes glow3{0%,100%{filter:drop-shadow(0 0 6px #a855f755)}50%{filter:drop-shadow(0 0 18px #a855f7aa)}}
-      @keyframes glow4{0%,100%{filter:drop-shadow(0 0 6px #f59e0b55)}50%{filter:drop-shadow(0 0 18px #f59e0baa)}}
-      @keyframes glow5{0%,100%{filter:drop-shadow(0 0 6px #3b82f655)}50%{filter:drop-shadow(0 0 18px #3b82f6aa)}}
-      @keyframes glow6{0%,100%{filter:drop-shadow(0 0 6px #f43f5e55)}50%{filter:drop-shadow(0 0 18px #f43f5eaa)}}
+      .t{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",Helvetica,Arial,sans-serif}
+      @keyframes fadeSlide{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+      @keyframes glow1{0%,100%{filter:drop-shadow(0 0 4px #22c55e44)}50%{filter:drop-shadow(0 0 16px #22c55eaa)}}
+      @keyframes glow2{0%,100%{filter:drop-shadow(0 0 4px #00d4ff44)}50%{filter:drop-shadow(0 0 16px #00d4ffaa)}}
+      @keyframes glow3{0%,100%{filter:drop-shadow(0 0 4px #a855f744)}50%{filter:drop-shadow(0 0 16px #a855f7aa)}}
+      @keyframes glow4{0%,100%{filter:drop-shadow(0 0 4px #f59e0b44)}50%{filter:drop-shadow(0 0 16px #f59e0baa)}}
+      @keyframes glow5{0%,100%{filter:drop-shadow(0 0 4px #3b82f644)}50%{filter:drop-shadow(0 0 16px #3b82f6aa)}}
+      @keyframes glow6{0%,100%{filter:drop-shadow(0 0 4px #f43f5e44)}50%{filter:drop-shadow(0 0 16px #f43f5eaa)}}
       @keyframes sweep{0%{transform:translateX(-820px)}100%{transform:translateX(820px)}}
-      @keyframes orbit{0%{stroke-dashoffset:0}100%{stroke-dashoffset:-40}}
-      @keyframes pulse{0%,100%{opacity:.4}50%{opacity:.8}}
-
-      .c1,.c2,.c3,.c4,.c5,.c6{opacity:0;animation:fadeSlide .8s ease-out forwards}
-      .c1{animation-delay:.15s}.c2{animation-delay:.3s}.c3{animation-delay:.45s}
-      .c4{animation-delay:.6s}.c5{animation-delay:.75s}.c6{animation-delay:.9s}
+      @keyframes orbit{0%{stroke-dashoffset:0}100%{stroke-dashoffset:-60}}
+      @keyframes pulse{0%,100%{opacity:.3}50%{opacity:.7}}
+      .c1,.c2,.c3,.c4,.c5,.c6{opacity:0;animation:fadeSlide .7s ease-out forwards}
+      .c1{animation-delay:.1s}.c2{animation-delay:.2s}.c3{animation-delay:.3s}
+      .c4{animation-delay:.4s}.c5{animation-delay:.5s}.c6{animation-delay:.6s}
       .g1{animation:glow1 3s ease-in-out infinite}
-      .g2{animation:glow2 3s ease-in-out infinite .5s}
-      .g3{animation:glow3 3s ease-in-out infinite 1s}
-      .g4{animation:glow4 3s ease-in-out infinite 1.5s}
-      .g5{animation:glow5 3s ease-in-out infinite 2s}
-      .g6{animation:glow6 3s ease-in-out infinite 2.5s}
-      .sweep-line{animation:sweep 5s linear infinite}
-      .orbit-ring{animation:orbit 3s linear infinite}
-      .float{animation:pulse 4s ease-in-out infinite}
+      .g2{animation:glow2 3s ease-in-out infinite .4s}
+      .g3{animation:glow3 3s ease-in-out infinite .8s}
+      .g4{animation:glow4 3s ease-in-out infinite 1.2s}
+      .g5{animation:glow5 3s ease-in-out infinite 1.6s}
+      .g6{animation:glow6 3s ease-in-out infinite 2s}
+      .sweep-line{animation:sweep 4s linear infinite}
+      .orbit-ring{animation:orbit 4s linear infinite}
+      .float{animation:pulse 5s ease-in-out infinite}
     </style>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#0a0e17"/>
-      <stop offset="100%" stop-color="#0d1220"/>
+      <stop offset="100%" stop-color="#111827"/>
     </linearGradient>
-    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="sw" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#22c55e" stop-opacity="0"/>
-      <stop offset="25%" stop-color="#22c55e" stop-opacity=".3"/>
-      <stop offset="50%" stop-color="#00d4ff" stop-opacity=".5"/>
-      <stop offset="75%" stop-color="#a855f7" stop-opacity=".3"/>
+      <stop offset="20%" stop-color="#22c55e" stop-opacity=".4"/>
+      <stop offset="40%" stop-color="#00d4ff" stop-opacity=".6"/>
+      <stop offset="60%" stop-color="#a855f7" stop-opacity=".5"/>
+      <stop offset="80%" stop-color="#f43f5e" stop-opacity=".4"/>
       <stop offset="100%" stop-color="#f43f5e" stop-opacity="0"/>
     </linearGradient>
-    <radialGradient id="spot1" cx=".2" cy=".3" r=".6">
-      <stop offset="0%" stop-color="#22c55e" stop-opacity=".06"/>
+    <radialGradient id="s1" cx=".15" cy=".2" r=".6">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity=".08"/>
       <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="spot2" cx=".8" cy=".7" r=".5">
-      <stop offset="0%" stop-color="#a855f7" stop-opacity=".05"/>
+    <radialGradient id="s2" cx=".85" cy=".8" r=".5">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity=".06"/>
       <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
     </radialGradient>
-    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-      <circle cx="16" cy="16" r=".4" fill="#1e293b" opacity=".5"/>
+    <radialGradient id="s3" cx=".5" cy=".5" r=".5">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity=".04"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="14" r=".5" fill="#1e293b" opacity=".6"/>
     </pattern>
   </defs>
 
-  <!-- BG layers -->
-  <rect width="800" height="440" fill="url(#bg)" rx="16"/>
-  <rect width="800" height="440" fill="url(#grid)" rx="16"/>
-  <rect width="800" height="440" fill="url(#spot1)" rx="16"/>
-  <rect width="800" height="440" fill="url(#spot2)" rx="16"/>
+  <!-- BG -->
+  <rect width="800" height="500" fill="url(#bg)" rx="14"/>
+  <rect width="800" height="500" fill="url(#grid)" rx="14"/>
+  <rect width="800" height="500" fill="url(#s1)" rx="14"/>
+  <rect width="800" height="500" fill="url(#s2)" rx="14"/>
+  <rect width="800" height="500" fill="url(#s3)" rx="14"/>
 
-  <!-- Top sweep -->
-  <rect x="0" y="0" width="820" height="2" fill="url(#sweep)" class="sweep-line" rx="1"/>
+  <!-- Sweep line -->
+  <rect x="0" y="0" width="820" height="2" fill="url(#sw)" class="sweep-line" rx="1"/>
 
-  <!-- Decorative orbit rings -->
-  <circle cx="400" cy="220" r="340" fill="none" stroke="#1e293b" stroke-width=".5" opacity=".3"/>
-  <circle cx="400" cy="220" r="340" fill="none" stroke="#00d4ff" stroke-width="1" stroke-dasharray="4 36" class="orbit-ring" opacity=".15"/>
+  <!-- Orbit rings -->
+  <ellipse cx="400" cy="250" rx="380" ry="240" fill="none" stroke="#1e293b" stroke-width=".5" opacity=".25"/>
+  <ellipse cx="400" cy="250" rx="380" ry="240" fill="none" stroke="#00d4ff" stroke-width="1" stroke-dasharray="5 25" class="orbit-ring" opacity=".12"/>
+  <ellipse cx="400" cy="250" rx="300" ry="190" fill="none" stroke="#1e293b" stroke-width=".3" opacity=".15"/>
+  <ellipse cx="400" cy="250" rx="300" ry="190" fill="none" stroke="#a855f7" stroke-width=".8" stroke-dasharray="3 30" class="orbit-ring" opacity=".08"/>
 
-  <!-- ═══ CARD 1: ExperienceLoop ═══ -->
-  <g transform="translate(28,32)" class="c1">
-    <rect width="236" height="172" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1"/>
-    <rect width="236" height="3" rx="2" fill="#22c55e" y="0" opacity=".8"/>
-    <g transform="translate(24,28)" class="g1">
-      <rect width="40" height="40" rx="20" fill="#22c55e15" stroke="#22c55e" stroke-width="1.2"/>
-      <path d="M14 16a8 8 0 0 1 12 0" stroke="#22c55e" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <path d="M26 24a8 8 0 0 1-12 0" stroke="#22c55e" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <polygon points="26,14 26,18 23,16" fill="#22c55e"/>
-      <polygon points="14,26 14,22 17,24" fill="#22c55e"/>
+  <!-- Floating particles -->
+  <circle cx="120" cy="80" r="1.5" fill="#22c55e" class="float" opacity=".5"/>
+  <circle cx="680" cy="420" r="1.2" fill="#a855f7" class="float" opacity=".4"/>
+  <circle cx="700" cy="60" r="1" fill="#00d4ff" class="float" opacity=".5"/>
+  <circle cx="100" cy="440" r="1.3" fill="#f43f5e" class="float" opacity=".3"/>
+  <circle cx="400" cy="30" r="1" fill="#f59e0b" class="float" opacity=".4"/>
+  <circle cx="50" cy="250" r=".8" fill="#3b82f6" class="float" opacity=".3"/>
+  <circle cx="750" cy="250" r="1.1" fill="#22c55e" class="float" opacity=".3"/>
+
+  <!-- ROW 1 -->
+
+  <!-- CARD 1: ExperienceLoop -->
+  <g transform="translate(16,18)" class="c1">
+    <rect width="248" height="218" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1"/>
+    <rect width="248" height="3.5" rx="2" fill="#22c55e" opacity=".9"/>
+    <rect x="1" y="4" width="246" height="12" rx="0" fill="#22c55e" opacity=".03"/>
+    <g transform="translate(20,24)" class="g1">
+      <circle cx="22" cy="22" r="22" fill="#22c55e0a" stroke="#22c55e" stroke-width="1.4"/>
+      <path d="M14 18a10 10 0 0 1 16 0" stroke="#22c55e" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M30 26a10 10 0 0 1-16 0" stroke="#22c55e" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <polygon points="30,16 30,20 27,18" fill="#22c55e"/>
+      <polygon points="14,28 14,24 17,26" fill="#22c55e"/>
     </g>
-    <text x="76" y="50" class="t" fill="#f0f6fc" font-size="15" font-weight="700">ExperienceLoop</text>
-    <text x="24" y="88" class="t" fill="#9ca3af" font-size="11">Every task leaves a lesson.</text>
-    <text x="24" y="106" class="t" fill="#9ca3af" font-size="11">Auto-extracts strategies,</text>
-    <text x="24" y="124" class="t" fill="#9ca3af" font-size="11">injects experience into</text>
-    <text x="24" y="142" class="t" fill="#9ca3af" font-size="11">future decisions.</text>
-    <rect x="24" y="152" width="64" height="14" rx="7" fill="#22c55e18"/>
-    <text x="56" y="163" class="t" text-anchor="middle" font-size="9" fill="#22c55e" font-weight="600">RE-TRAC</text>
-    <rect x="96" y="152" width="72" height="14" rx="7" fill="#22c55e18"/>
-    <text x="132" y="163" class="t" text-anchor="middle" font-size="9" fill="#22c55e" font-weight="600">Feedback</text>
+    <text x="72" y="40" class="t" fill="#f0f6fc" font-size="15" font-weight="700">经验学习</text>
+    <text x="72" y="57" class="t" fill="#22c55e" font-size="10.5" opacity=".8">ExperienceLoop</text>
+    <text x="20" y="88" class="t" fill="#c9cdd4" font-size="11.5">闭环经验引擎：每次任务自动提取</text>
+    <text x="20" y="106" class="t" fill="#c9cdd4" font-size="11.5">教训与策略，遇到类似问题时检索</text>
+    <text x="20" y="124" class="t" fill="#c9cdd4" font-size="11.5">并注入。置信度校准 + 冲突检测</text>
+    <text x="20" y="142" class="t" fill="#c9cdd4" font-size="11.5">+ 负面学习 + 主动遗忘。</text>
+    <text x="20" y="162" class="t" fill="#9ca3af" font-size="10" font-style="italic">别的 Agent 重复犯错，rodbot 从错误中进化。</text>
+    <rect x="20" y="180" width="64" height="20" rx="10" fill="#22c55e14" stroke="#22c55e" stroke-width=".5"/>
+    <text x="52" y="194" class="t" text-anchor="middle" font-size="9" fill="#22c55e" font-weight="600">RE-TRAC</text>
+    <rect x="92" y="180" width="72" height="20" rx="10" fill="#22c55e14" stroke="#22c55e" stroke-width=".5"/>
+    <text x="128" y="194" class="t" text-anchor="middle" font-size="9" fill="#22c55e" font-weight="600">闭环反馈</text>
+    <rect x="172" y="180" width="60" height="20" rx="10" fill="#22c55e14" stroke="#22c55e" stroke-width=".5"/>
+    <text x="202" y="194" class="t" text-anchor="middle" font-size="9" fill="#22c55e" font-weight="600">自进化</text>
   </g>
 
-  <!-- ═══ CARD 2: LanceDB Memory ═══ -->
-  <g transform="translate(282,32)" class="c2">
-    <rect width="236" height="172" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1"/>
-    <rect width="236" height="3" rx="2" fill="#00d4ff" y="0" opacity=".8"/>
-    <g transform="translate(24,28)" class="g2">
-      <rect width="40" height="40" rx="20" fill="#00d4ff15" stroke="#00d4ff" stroke-width="1.2"/>
-      <ellipse cx="20" cy="16" rx="9" ry="4" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
-      <path d="M11 16v8c0 2.2 4 4 9 4s9-1.8 9-4v-8" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
-      <path d="M11 20c0 2.2 4 4 9 4s9-1.8 9-4" fill="none" stroke="#00d4ff" stroke-width="1" opacity=".5"/>
+  <!-- CARD 2: LanceDB Memory -->
+  <g transform="translate(276,18)" class="c2">
+    <rect width="248" height="218" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1"/>
+    <rect width="248" height="3.5" rx="2" fill="#00d4ff" opacity=".9"/>
+    <rect x="1" y="4" width="246" height="12" rx="0" fill="#00d4ff" opacity=".03"/>
+    <g transform="translate(20,24)" class="g2">
+      <circle cx="22" cy="22" r="22" fill="#00d4ff0a" stroke="#00d4ff" stroke-width="1.4"/>
+      <ellipse cx="22" cy="17" rx="10" ry="5" fill="none" stroke="#00d4ff" stroke-width="1.6"/>
+      <path d="M12 17v10c0 2.8 4.5 5 10 5s10-2.2 10-5v-10" fill="none" stroke="#00d4ff" stroke-width="1.6"/>
+      <path d="M12 22c0 2.8 4.5 5 10 5s10-2.2 10-5" fill="none" stroke="#00d4ff" stroke-width="1" opacity=".5"/>
     </g>
-    <text x="76" y="50" class="t" fill="#f0f6fc" font-size="15" font-weight="700">LanceDB Memory</text>
-    <text x="24" y="88" class="t" fill="#9ca3af" font-size="11">Persistent memory that</text>
-    <text x="24" y="106" class="t" fill="#9ca3af" font-size="11">remembers, consolidates,</text>
-    <text x="24" y="124" class="t" fill="#9ca3af" font-size="11">and actively forgets</text>
-    <text x="24" y="142" class="t" fill="#9ca3af" font-size="11">stale knowledge.</text>
-    <rect x="24" y="152" width="56" height="14" rx="7" fill="#00d4ff18"/>
-    <text x="52" y="163" class="t" text-anchor="middle" font-size="9" fill="#00d4ff" font-weight="600">Vector</text>
-    <rect x="88" y="152" width="72" height="14" rx="7" fill="#00d4ff18"/>
-    <text x="124" y="163" class="t" text-anchor="middle" font-size="9" fill="#00d4ff" font-weight="600">Keyword</text>
+    <text x="72" y="40" class="t" fill="#f0f6fc" font-size="15" font-weight="700">持久记忆</text>
+    <text x="72" y="57" class="t" fill="#00d4ff" font-size="10.5" opacity=".8">LanceDB</text>
+    <text x="20" y="88" class="t" fill="#c9cdd4" font-size="11.5">向量搜索 + 关键词降级双检索，</text>
+    <text x="20" y="106" class="t" fill="#c9cdd4" font-size="11.5">有没有 Embedding 模型都能用。</text>
+    <text x="20" y="124" class="t" fill="#c9cdd4" font-size="11.5">跨会话、跨重启，记住偏好、</text>
+    <text x="20" y="142" class="t" fill="#c9cdd4" font-size="11.5">项目、习惯。自动整合 + 主动遗忘。</text>
+    <text x="20" y="162" class="t" fill="#9ca3af" font-size="10" font-style="italic">用得越久，它越懂你。</text>
+    <rect x="20" y="180" width="72" height="20" rx="10" fill="#00d4ff14" stroke="#00d4ff" stroke-width=".5"/>
+    <text x="56" y="194" class="t" text-anchor="middle" font-size="9" fill="#00d4ff" font-weight="600">向量搜索</text>
+    <rect x="100" y="180" width="72" height="20" rx="10" fill="#00d4ff14" stroke="#00d4ff" stroke-width=".5"/>
+    <text x="136" y="194" class="t" text-anchor="middle" font-size="9" fill="#00d4ff" font-weight="600">关键词降级</text>
+    <rect x="180" y="180" width="52" height="20" rx="10" fill="#00d4ff14" stroke="#00d4ff" stroke-width=".5"/>
+    <text x="206" y="194" class="t" text-anchor="middle" font-size="9" fill="#00d4ff" font-weight="600">持久化</text>
   </g>
 
-  <!-- ═══ CARD 3: Thinking Protocol ═══ -->
-  <g transform="translate(536,32)" class="c3">
-    <rect width="236" height="172" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1"/>
-    <rect width="236" height="3" rx="2" fill="#a855f7" y="0" opacity=".8"/>
-    <g transform="translate(24,28)" class="g3">
-      <rect width="40" height="40" rx="20" fill="#a855f715" stroke="#a855f7" stroke-width="1.2"/>
-      <path d="M15 24c-1-3 0-8 5-10s8 0 9 4 0 7-3 9c-1 1-2 2-2 3v1" fill="none" stroke="#a855f7" stroke-width="1.8" stroke-linecap="round"/>
-      <circle cx="20" cy="32" r="1" fill="#a855f7"/>
+  <!-- CARD 3: Thinking Protocol -->
+  <g transform="translate(536,18)" class="c3">
+    <rect width="248" height="218" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1"/>
+    <rect width="248" height="3.5" rx="2" fill="#a855f7" opacity=".9"/>
+    <rect x="1" y="4" width="246" height="12" rx="0" fill="#a855f7" opacity=".03"/>
+    <g transform="translate(20,24)" class="g3">
+      <circle cx="22" cy="22" r="22" fill="#a855f70a" stroke="#a855f7" stroke-width="1.4"/>
+      <path d="M16 26c-1.5-3.5 0-9 6-11.5s9.5.5 10.5 5 0 8-3.5 10.5c-1.2 1-2 2.2-2 3.5v1" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="22" cy="37" r="1.2" fill="#a855f7"/>
+      <path d="M19 14l1-3M25 13l1-4M30 17l3-1" stroke="#a855f7" stroke-width="1" stroke-linecap="round" opacity=".5"/>
     </g>
-    <text x="76" y="50" class="t" fill="#f0f6fc" font-size="15" font-weight="700">Thinking Protocol</text>
-    <text x="24" y="88" class="t" fill="#9ca3af" font-size="11">Deep reasoning injected</text>
-    <text x="24" y="106" class="t" fill="#9ca3af" font-size="11">into System Prompt.</text>
-    <text x="24" y="124" class="t" fill="#9ca3af" font-size="11">Zero extra latency,</text>
-    <text x="24" y="142" class="t" fill="#9ca3af" font-size="11">dramatically better answers.</text>
-    <rect x="24" y="152" width="72" height="14" rx="7" fill="#a855f718"/>
-    <text x="60" y="163" class="t" text-anchor="middle" font-size="9" fill="#a855f7" font-weight="600">Zero Cost</text>
+    <text x="72" y="40" class="t" fill="#f0f6fc" font-size="15" font-weight="700">深度思考</text>
+    <text x="72" y="57" class="t" fill="#a855f7" font-size="10.5" opacity=".8">Thinking Protocol</text>
+    <text x="20" y="88" class="t" fill="#c9cdd4" font-size="11.5">System Prompt 内置深度推理</text>
+    <text x="20" y="106" class="t" fill="#c9cdd4" font-size="11.5">协议，零额外 API 调用开销，</text>
+    <text x="20" y="124" class="t" fill="#c9cdd4" font-size="11.5">回答质量显著提升。不是调用</text>
+    <text x="20" y="142" class="t" fill="#c9cdd4" font-size="11.5">更贵的模型，而是让模型更会思考。</text>
+    <text x="20" y="162" class="t" fill="#9ca3af" font-size="10" font-style="italic">同样的模型，更深的推理。</text>
+    <rect x="20" y="180" width="64" height="20" rx="10" fill="#a855f714" stroke="#a855f7" stroke-width=".5"/>
+    <text x="52" y="194" class="t" text-anchor="middle" font-size="9" fill="#a855f7" font-weight="600">零开销</text>
+    <rect x="92" y="180" width="72" height="20" rx="10" fill="#a855f714" stroke="#a855f7" stroke-width=".5"/>
+    <text x="128" y="194" class="t" text-anchor="middle" font-size="9" fill="#a855f7" font-weight="600">深度推理</text>
   </g>
 
-  <!-- ═══ CARD 4: Retry & Reflection ═══ -->
-  <g transform="translate(28,232)" class="c4">
-    <rect width="236" height="172" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1"/>
-    <rect width="236" height="3" rx="2" fill="#f59e0b" y="0" opacity=".8"/>
-    <g transform="translate(24,28)" class="g4">
-      <rect width="40" height="40" rx="20" fill="#f59e0b15" stroke="#f59e0b" stroke-width="1.2"/>
-      <path d="M14 20a8 8 0 1 1 4 7" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
-      <polygon points="16,27 20,27 18,31" fill="#f59e0b"/>
-      <circle cx="20" cy="20" r="2.5" fill="#f59e0b"/>
+  <!-- ROW 2 -->
+
+  <!-- CARD 4: Retry & Reflection -->
+  <g transform="translate(16,248)" class="c4">
+    <rect width="248" height="218" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1"/>
+    <rect width="248" height="3.5" rx="2" fill="#f59e0b" opacity=".9"/>
+    <rect x="1" y="4" width="246" height="12" rx="0" fill="#f59e0b" opacity=".03"/>
+    <g transform="translate(20,24)" class="g4">
+      <circle cx="22" cy="22" r="22" fill="#f59e0b0a" stroke="#f59e0b" stroke-width="1.4"/>
+      <path d="M14 22a10 10 0 1 1 5 8.5" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round"/>
+      <polygon points="17,30.5 21,30.5 19,34.5" fill="#f59e0b"/>
+      <circle cx="22" cy="22" r="3" fill="#f59e0b"/>
     </g>
-    <text x="76" y="50" class="t" fill="#f0f6fc" font-size="15" font-weight="700">Retry &amp; Reflection</text>
-    <text x="24" y="88" class="t" fill="#9ca3af" font-size="11">Auto-detects tool errors,</text>
-    <text x="24" y="106" class="t" fill="#9ca3af" font-size="11">injects reflection prompts.</text>
-    <text x="24" y="124" class="t" fill="#9ca3af" font-size="11">Escalates to deep reflection</text>
-    <text x="24" y="142" class="t" fill="#9ca3af" font-size="11">after 3 consecutive failures.</text>
-    <rect x="24" y="152" width="88" height="14" rx="7" fill="#f59e0b18"/>
-    <text x="68" y="163" class="t" text-anchor="middle" font-size="9" fill="#f59e0b" font-weight="600">Self-Healing</text>
+    <text x="72" y="40" class="t" fill="#f0f6fc" font-size="15" font-weight="700">自我纠错</text>
+    <text x="72" y="57" class="t" fill="#f59e0b" font-size="10.5" opacity=".8">Retry / Reflection</text>
+    <text x="20" y="88" class="t" fill="#c9cdd4" font-size="11.5">自动检测工具调用错误并重试，</text>
+    <text x="20" y="106" class="t" fill="#c9cdd4" font-size="11.5">连续 3 次失败后升级为深度反思</text>
+    <text x="20" y="124" class="t" fill="#c9cdd4" font-size="11.5">策略。根据工具实际可用性动态</text>
+    <text x="20" y="142" class="t" fill="#c9cdd4" font-size="11.5">启停提示，防止幻觉调用。</text>
+    <text x="20" y="162" class="t" fill="#9ca3af" font-size="10" font-style="italic">失败不是终点，是反思的起点。</text>
+    <rect x="20" y="180" width="72" height="20" rx="10" fill="#f59e0b14" stroke="#f59e0b" stroke-width=".5"/>
+    <text x="56" y="194" class="t" text-anchor="middle" font-size="9" fill="#f59e0b" font-weight="600">自动重试</text>
+    <rect x="100" y="180" width="72" height="20" rx="10" fill="#f59e0b14" stroke="#f59e0b" stroke-width=".5"/>
+    <text x="136" y="194" class="t" text-anchor="middle" font-size="9" fill="#f59e0b" font-weight="600">深度反思</text>
+    <rect x="180" y="180" width="52" height="20" rx="10" fill="#f59e0b14" stroke="#f59e0b" stroke-width=".5"/>
+    <text x="206" y="194" class="t" text-anchor="middle" font-size="9" fill="#f59e0b" font-weight="600">自愈</text>
   </g>
 
-  <!-- ═══ CARD 5: MCP Extensibility ═══ -->
-  <g transform="translate(282,232)" class="c5">
-    <rect width="236" height="172" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1"/>
-    <rect width="236" height="3" rx="2" fill="#3b82f6" y="0" opacity=".8"/>
-    <g transform="translate(24,28)" class="g5">
-      <rect width="40" height="40" rx="20" fill="#3b82f615" stroke="#3b82f6" stroke-width="1.2"/>
-      <rect x="14" y="12" width="12" height="10" rx="2" fill="none" stroke="#3b82f6" stroke-width="1.5"/>
-      <line x1="17" y1="12" x2="17" y2="8" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-      <line x1="23" y1="12" x2="23" y2="8" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-      <line x1="20" y1="22" x2="20" y2="30" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+  <!-- CARD 5: MCP -->
+  <g transform="translate(276,248)" class="c5">
+    <rect width="248" height="218" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1"/>
+    <rect width="248" height="3.5" rx="2" fill="#3b82f6" opacity=".9"/>
+    <rect x="1" y="4" width="246" height="12" rx="0" fill="#3b82f6" opacity=".03"/>
+    <g transform="translate(20,24)" class="g5">
+      <circle cx="22" cy="22" r="22" fill="#3b82f60a" stroke="#3b82f6" stroke-width="1.4"/>
+      <rect x="14" y="14" width="16" height="12" rx="2.5" fill="none" stroke="#3b82f6" stroke-width="1.8"/>
+      <line x1="18" y1="14" x2="18" y2="10" stroke="#3b82f6" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="26" y1="14" x2="26" y2="10" stroke="#3b82f6" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="22" y1="26" x2="22" y2="34" stroke="#3b82f6" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="22" cy="20" r="1.5" fill="#3b82f6" opacity=".6"/>
     </g>
-    <text x="76" y="50" class="t" fill="#f0f6fc" font-size="15" font-weight="700">MCP Extensibility</text>
-    <text x="24" y="88" class="t" fill="#9ca3af" font-size="11">Model Context Protocol.</text>
-    <text x="24" y="106" class="t" fill="#9ca3af" font-size="11">Plug in any tool ecosystem.</text>
-    <text x="24" y="124" class="t" fill="#9ca3af" font-size="11">Claude Desktop &amp; Cursor</text>
-    <text x="24" y="142" class="t" fill="#9ca3af" font-size="11">config compatible.</text>
-    <rect x="24" y="152" width="48" height="14" rx="7" fill="#3b82f618"/>
-    <text x="48" y="163" class="t" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="600">stdio</text>
-    <rect x="80" y="152" width="48" height="14" rx="7" fill="#3b82f618"/>
-    <text x="104" y="163" class="t" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="600">HTTP</text>
+    <text x="72" y="40" class="t" fill="#f0f6fc" font-size="15" font-weight="700">MCP 生态</text>
+    <text x="72" y="57" class="t" fill="#3b82f6" font-size="10.5" opacity=".8">Model Context Protocol</text>
+    <text x="20" y="88" class="t" fill="#c9cdd4" font-size="11.5">接入任何工具生态。配置格式</text>
+    <text x="20" y="106" class="t" fill="#c9cdd4" font-size="11.5">兼容 Claude Desktop 和 Cursor，</text>
+    <text x="20" y="124" class="t" fill="#c9cdd4" font-size="11.5">支持 stdio 和 HTTP 两种传输。</text>
+    <text x="20" y="142" class="t" fill="#c9cdd4" font-size="11.5">一份配置，到处运行。</text>
+    <text x="20" y="162" class="t" fill="#9ca3af" font-size="10" font-style="italic">工具生态，即插即用。</text>
+    <rect x="20" y="180" width="52" height="20" rx="10" fill="#3b82f614" stroke="#3b82f6" stroke-width=".5"/>
+    <text x="46" y="194" class="t" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="600">stdio</text>
+    <rect x="80" y="180" width="52" height="20" rx="10" fill="#3b82f614" stroke="#3b82f6" stroke-width=".5"/>
+    <text x="106" y="194" class="t" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="600">HTTP</text>
+    <rect x="140" y="180" width="88" height="20" rx="10" fill="#3b82f614" stroke="#3b82f6" stroke-width=".5"/>
+    <text x="184" y="194" class="t" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="600">跨平台兼容</text>
   </g>
 
-  <!-- ═══ CARD 6: ~4,100 Lines ═══ -->
-  <g transform="translate(536,232)" class="c6">
-    <rect width="236" height="172" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1"/>
-    <rect width="236" height="3" rx="2" fill="#f43f5e" y="0" opacity=".8"/>
-    <g transform="translate(24,28)" class="g6">
-      <rect width="40" height="40" rx="20" fill="#f43f5e15" stroke="#f43f5e" stroke-width="1.2"/>
-      <polygon points="22,8 13,22 18,22 16,32 27,18 22,18" fill="#f43f5e"/>
+  <!-- CARD 6: Lightweight -->
+  <g transform="translate(536,248)" class="c6">
+    <rect width="248" height="218" rx="12" fill="#111827" stroke="#1f2937" stroke-width="1"/>
+    <rect width="248" height="3.5" rx="2" fill="#f43f5e" opacity=".9"/>
+    <rect x="1" y="4" width="246" height="12" rx="0" fill="#f43f5e" opacity=".03"/>
+    <g transform="translate(20,24)" class="g6">
+      <circle cx="22" cy="22" r="22" fill="#f43f5e0a" stroke="#f43f5e" stroke-width="1.4"/>
+      <polygon points="24,10 15,25 20,25 18,34 29,19 24,19" fill="#f43f5e"/>
     </g>
-    <text x="76" y="50" class="t" fill="#f0f6fc" font-size="15" font-weight="700">~4,100 Lines</text>
-    <text x="24" y="88" class="t" fill="#9ca3af" font-size="11">Complete AI assistant</text>
-    <text x="24" y="106" class="t" fill="#9ca3af" font-size="11">framework. 99% lighter</text>
-    <text x="24" y="124" class="t" fill="#9ca3af" font-size="11">than heavyweight alternatives.</text>
-    <text x="24" y="142" class="t" fill="#9ca3af" font-size="11">Fast, hackable, yours.</text>
-    <rect x="24" y="152" width="96" height="14" rx="7" fill="#f43f5e18"/>
-    <text x="72" y="163" class="t" text-anchor="middle" font-size="9" fill="#f43f5e" font-weight="600">Lightweight</text>
+    <text x="72" y="40" class="t" fill="#f0f6fc" font-size="15" font-weight="700">极致轻量</text>
+    <text x="72" y="57" class="t" fill="#f43f5e" font-size="10.5" opacity=".8">~4,100 Lines</text>
+    <text x="20" y="88" class="t" fill="#c9cdd4" font-size="11.5">完整的 AI 助手框架，仅 ~4,100</text>
+    <text x="20" y="106" class="t" fill="#c9cdd4" font-size="11.5">行核心代码，比 OpenClaw 轻 99%。</text>
+    <text x="20" y="124" class="t" fill="#c9cdd4" font-size="11.5">启动快、占用低、代码清晰易读。</text>
+    <text x="20" y="142" class="t" fill="#c9cdd4" font-size="11.5">2 分钟上手，完全可 Hack。</text>
+    <text x="20" y="162" class="t" fill="#9ca3af" font-size="10" font-style="italic">少即是多，快即是好。</text>
+    <rect x="20" y="180" width="64" height="20" rx="10" fill="#f43f5e14" stroke="#f43f5e" stroke-width=".5"/>
+    <text x="52" y="194" class="t" text-anchor="middle" font-size="9" fill="#f43f5e" font-weight="600">轻 99%</text>
+    <rect x="92" y="180" width="80" height="20" rx="10" fill="#f43f5e14" stroke="#f43f5e" stroke-width=".5"/>
+    <text x="132" y="194" class="t" text-anchor="middle" font-size="9" fill="#f43f5e" font-weight="600">2 分钟上手</text>
+    <rect x="180" y="180" width="52" height="20" rx="10" fill="#f43f5e14" stroke="#f43f5e" stroke-width=".5"/>
+    <text x="206" y="194" class="t" text-anchor="middle" font-size="9" fill="#f43f5e" font-weight="600">可 Hack</text>
   </g>
+
+  <!-- Bottom sweep -->
+  <rect x="0" y="498" width="820" height="2" fill="url(#sw)" class="sweep-line" rx="1" style="animation-delay:2s"/>
 </svg>
